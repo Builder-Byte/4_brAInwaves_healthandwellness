@@ -4,6 +4,9 @@
 ## 🌟 Overview
 AI Fitness Trainer is your personal digital workout companion that transforms your exercise routine using cutting-edge computer vision technology! Track your movements, count reps, and receive real-time feedback with this smart fitness app.
 
+## 📜 PPt
+![PPT](FitSync-AIfinal.pptx)
+
 ## 💻 UI
 ![Computer UI](ui/computer.png)
 ![Tablet UI](ui/tab.png)
