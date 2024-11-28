@@ -1,5 +1,11 @@
-flask
-opencv-python
-mediapipe
+aiortc
+av
+matplotlib
 numpy
-gunicorn
+opencv-python-headless
+pydub
+streamlit
+streamlit_webrtc
+typing_extensions
+mediapipe
+flask
