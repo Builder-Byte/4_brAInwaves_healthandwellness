@@ -1,7 +1,14 @@
+Understood. Here is the updated README with the 3 images integrated from the "ui" folder:
+
 # 💪 AI Fitness Trainer 🏋️‍♀️
 
 ## 🌟 Overview
 AI Fitness Trainer is your personal digital workout companion that transforms your exercise routine using cutting-edge computer vision technology! Track your movements, count reps, and receive real-time feedback with this smart fitness app.
+
+## 💻 UI
+![Computer UI](ui/computer.png)
+![Tablet UI](ui/tablet.png)
+![Mobile UI](ui/mobile.png)
 
 ## 🚀 Tech Stack
 [![Python Badge](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&labelColor=black&logo=python&logoColor=3776AB)](#)
@@ -27,29 +34,24 @@ AI Fitness Trainer is your personal digital workout companion that transforms yo
 - 📸 Camera-enabled device
 
 ## 🚦 Quick Start
-
 1. Clone the repository:
 ```bash
 git clone https://github.com/Builder-Byte/4_brAInwaves_healthandwellness.git
 cd 4_brAInwaves_healthandwellness
 ```
-
 2. Create a virtual environment:
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 ```
-
 3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-
 4. Launch the fitness trainer:
 ```bash
 python exercise.py
 ```
-
 5. Open your browser and start your workout at `http://localhost:5000` 🏃‍♂️💨
 
 ## 🤖 How It Works
@@ -75,6 +77,6 @@ Got ideas to make this even more awesome? Pull requests are welcome! Let's get f
 
 ## 📜 License
 MIT License
----
 
+---
 **Made with ❤️ and 🧠 by the brAInwaves Team**
