@@ -1,4 +1,3 @@
-Understood. Here is the updated README with the 3 images integrated from the "ui" folder:
 
 # 💪 AI Fitness Trainer 🏋️‍♀️
 
@@ -7,7 +6,7 @@ AI Fitness Trainer is your personal digital workout companion that transforms yo
 
 ## 💻 UI
 ![Computer UI](ui/computer.png)
-![Tablet UI](ui/tablet.png)
+![Tablet UI](ui/tab.png)
 ![Mobile UI](ui/mobile.png)
 
 ## 🚀 Tech Stack
