@@ -3,6 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fitness Trainer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black min-h-screen text-white p-6">
+    <div class="container mx-auto">
+        <!-- Header -->
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                AI Fitness Trainer
+            </h1>
+        </header>
+
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Video Feed -->
+            <div class="lg:col-span-2">
+                <div class="relative rounded-2xl overflow-hidden bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 shadow-xl">
+                    <img src="{{ url_for('video_feed') }}" class="w-full h-auto">
+                </div>
+            </div>
+
+            <!-- Exercise Info -->
+            <div class="space-y-6">
+                <!-- Current Exercise -->
+                <div class="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 shadow-xl">
+                    <h2 id="current-exercise" class="text-2xl font-bold mb-4 text-blue-400">
+                        Current Exercise: Squat
+                    </h2>
+                    <p id="exercise-time-left" class="text-xl font-semibold text-purple-400">
+                        Time Left: 30s
+                    </p>
+                </div>
+
+                <!-- Feedback -->
+                <div class="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 shadow-xl">
+                    <h3 class="text-lg font-semibold mb-2 text-gray-400">Feedback</h3>
+                    <p id="exercise-feedback" class="text-lg font-medium text-white">
+                        Waiting for movement...
+                    </p>
+                </div>
+
+                <!-- Exercise Counts -->
+                <div class="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 shadow-xl">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-400">Exercise Counts</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-400">Squats</span>
+                            <span id="squat-count" class="text-xl font-bold">0</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-400">Curls</span>
+                            <span id="curl-count" class="text-xl font-bold">0</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-pink-400">Situps</span>
+                            <span id="situp-count" class="text-xl font-bold">0</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-indigo-400">Lunges</span>
+                            <span id="lunge-count" class="text-xl font-bold">0</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-teal-400">Pushups</span>
+                            <span id="pushup-count" class="text-xl font-bold">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateExerciseData() {
+            fetch('/exercise_data')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('current-exercise').innerText = 
+                        `Current Exercise: ${data.current_exercise}`;
+                    document.getElementById('exercise-feedback').innerText = 
+                        data.feedback || 'Waiting for movement...';
+                    document.getElementById('squat-count').innerText = data.reps[0];
+                    document.getElementById('curl-count').innerText = data.reps[1];
+                    document.getElementById('situp-count').innerText = data.reps[2];
+                    document.getElementById('lunge-count').innerText = data.reps[3];
+                    document.getElementById('pushup-count').innerText = data.reps[4];
+                    document.getElementById('exercise-time-left').innerText = 
+                        `Time Left: ${data.time_left}s`;
+                })
+                .catch(error => console.error('Error fetching exercise data:', error));
+        }
+        
+        setInterval(updateExerciseData, 1000);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness Tracker</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -57,4 +181,4 @@
         setInterval(updateExerciseData, 1000);
     </script>
 </body>
-</html>
+</html> -->
